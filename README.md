@@ -10,6 +10,7 @@ this app using in  retrieving public GitHub repositories، with search feature
 - Handle network error
 - User friendly UI to enable user to refresh downloaded data
 - loading indicator while data loading and placholder in images if not retrieved
+- Paginagtion to retrieve 10 by 10 items 
 - no third parties used
 
 # Requirments
