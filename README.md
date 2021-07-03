@@ -1,9 +1,9 @@
 # SearchReposApp
-this app using in  retrieving public GitHub repositories، with search feature
+this app using in  retrieving public GitHub repositories، with search in repos and caching nativly
 
 # features
 
-- Asynchronous image downloading and caching
+- Asynchronous image downloading and native caching
 - load image from URLSession- based networking
 - Asyncronous Repos info downloading and caching URLSession-based networking
 - Search in downloaded data by min 2 letters
