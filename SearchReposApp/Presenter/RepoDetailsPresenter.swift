@@ -24,6 +24,6 @@ class RepoDetailsPresenter {
     }
     var img: URL?
     {
-        return URL(string: repoDetailsModel.description)
+        return URL(string: repoDetailsModel.img ?? "")
     }
 }
