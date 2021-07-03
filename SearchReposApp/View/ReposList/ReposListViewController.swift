@@ -68,8 +68,8 @@ extension ReposListViewController : UITableViewDelegate , UITableViewDataSource 
             return UITableViewCell()
         }
         
-        if let model = presenter.makeRepoCellUIModel(at: indexPath.row) {
-            cell.setupTableCell(repo: model)
+        if let presenter = presenter.makeRepoCellPresenter(at: indexPath.row) {
+            cell.setupTableCell(with: presenter)
         }
         return cell
     }

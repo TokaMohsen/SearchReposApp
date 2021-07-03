@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D21C9AE42690F63A00CC0CA9 /* RepoCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C9AE32690F63A00CC0CA9 /* RepoCellPresenter.swift */; };
+		D21C9AE42690F63A00CC0CA9 /* GitReposCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C9AE32690F63A00CC0CA9 /* GitReposCellPresenter.swift */; };
 		D21C9AE92690F68A00CC0CA9 /* GetOwnerInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C9AE82690F68A00CC0CA9 /* GetOwnerInfoService.swift */; };
+		D21C9AF12690FA8600CC0CA9 /* NetworkConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C9AF02690FA8600CC0CA9 /* NetworkConsts.swift */; };
 		D294FC5C268DB280008EF575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FC5B268DB280008EF575 /* AppDelegate.swift */; };
 		D294FC5E268DB280008EF575 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FC5D268DB280008EF575 /* SceneDelegate.swift */; };
 		D294FC65268DB282008EF575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D294FC64268DB282008EF575 /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		D294FCA3268DC1C0008EF575 /* GitReposResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCA2268DC1C0008EF575 /* GitReposResponse.swift */; };
 		D294FCAC268E082C008EF575 /* GetGithubRepoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCAB268E082C008EF575 /* GetGithubRepoListService.swift */; };
 		D294FCB1268E0872008EF575 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCB0268E0872008EF575 /* URLSession+Extension.swift */; };
-		D294FCBD268E2101008EF575 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCBC268E2101008EF575 /* BaseService.swift */; };
 		D294FCC2268E32F3008EF575 /* GitRepoInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCC1268E32F3008EF575 /* GitRepoInformationResponse.swift */; };
 		D294FCCD268E4CAC008EF575 /* RepoCellUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCCC268E4CAC008EF575 /* RepoCellUIModel.swift */; };
 		D294FCD3268E4FEF008EF575 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294FCD2268E4FEF008EF575 /* UIImageView+Extension.swift */; };
@@ -53,8 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D21C9AE32690F63A00CC0CA9 /* RepoCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellPresenter.swift; sourceTree = "<group>"; };
+		D21C9AE32690F63A00CC0CA9 /* GitReposCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitReposCellPresenter.swift; sourceTree = "<group>"; };
 		D21C9AE82690F68A00CC0CA9 /* GetOwnerInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOwnerInfoService.swift; sourceTree = "<group>"; };
+		D21C9AF02690FA8600CC0CA9 /* NetworkConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsts.swift; sourceTree = "<group>"; };
 		D294FC58268DB280008EF575 /* SearchReposApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchReposApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D294FC5B268DB280008EF575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D294FC5D268DB280008EF575 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		D294FCA2268DC1C0008EF575 /* GitReposResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitReposResponse.swift; sourceTree = "<group>"; };
 		D294FCAB268E082C008EF575 /* GetGithubRepoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGithubRepoListService.swift; sourceTree = "<group>"; };
 		D294FCB0268E0872008EF575 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
-		D294FCBC268E2101008EF575 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		D294FCC1268E32F3008EF575 /* GitRepoInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoInformationResponse.swift; sourceTree = "<group>"; };
 		D294FCCC268E4CAC008EF575 /* RepoCellUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellUIModel.swift; sourceTree = "<group>"; };
 		D294FCD2268E4FEF008EF575 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -181,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				D294FCAB268E082C008EF575 /* GetGithubRepoListService.swift */,
-				D294FCBC268E2101008EF575 /* BaseService.swift */,
 				D21C9AE82690F68A00CC0CA9 /* GetOwnerInfoService.swift */,
 			);
 			path = Service;
@@ -201,7 +200,7 @@
 			children = (
 				D294FCF7268F1B30008EF575 /* RepoListPresenter.swift */,
 				D294FD2A268FC754008EF575 /* RepoDetailsPresenter.swift */,
-				D21C9AE32690F63A00CC0CA9 /* RepoCellPresenter.swift */,
+				D21C9AE32690F63A00CC0CA9 /* GitReposCellPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -274,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				D294FCFC268F242E008EF575 /* APIClient.swift */,
+				D21C9AF02690FA8600CC0CA9 /* NetworkConsts.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -410,12 +410,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D294FCBD268E2101008EF575 /* BaseService.swift in Sources */,
-				D21C9AE42690F63A00CC0CA9 /* RepoCellPresenter.swift in Sources */,
+				D21C9AE42690F63A00CC0CA9 /* GitReposCellPresenter.swift in Sources */,
 				D294FCCD268E4CAC008EF575 /* RepoCellUIModel.swift in Sources */,
 				D294FCC2268E32F3008EF575 /* GitRepoInformationResponse.swift in Sources */,
 				D21C9AE92690F68A00CC0CA9 /* GetOwnerInfoService.swift in Sources */,
 				D294FCF8268F1B30008EF575 /* RepoListPresenter.swift in Sources */,
+				D21C9AF12690FA8600CC0CA9 /* NetworkConsts.swift in Sources */,
 				D294FC5C268DB280008EF575 /* AppDelegate.swift in Sources */,
 				D294FCB1268E0872008EF575 /* URLSession+Extension.swift in Sources */,
 				D294FCD3268E4FEF008EF575 /* UIImageView+Extension.swift in Sources */,
