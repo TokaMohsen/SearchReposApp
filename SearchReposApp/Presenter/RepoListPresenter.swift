@@ -56,9 +56,10 @@ class RepoListPresenter {
         self.viewDelegate = view
     }
     
+    /// fetch get repos service to load paginated cached repos
+    ///
     func loadRepos() {
         pageIndex += 1
-        
         self.viewDelegate?.showLoadingIndicator()
         repoService.fetchRepos(searchKeyword: searchKeyword, page: pageIndex, numberOfItems: numberOfItemsPerPage) { [weak self] (result) in
             guard let self = self else {return}
@@ -88,6 +89,9 @@ class RepoListPresenter {
         pageIndex = 0
     }
     
+    /// Takes an index of selected cell as argument to navigate with to details screen
+    ///
+    /// - Parameter index
     func selectedRepo(at index: Int)
     {
         if let details = self.makeRepoDetailsUIModel(repo: fetchedRepos?[index]) {
@@ -96,6 +100,11 @@ class RepoListPresenter {
     }
     
     // MARK: - Factory Methods
+    
+    /// Takes a repo object argument and extract from it parameters which construct and returns a ui model to show in details screen
+    ///
+    /// - Parameter repo details object
+    /// - Returns: detailsUIModel
     private func makeRepoDetailsUIModel(repo: RepoDetails?) -> RepoDetailsUIModel? {
         guard let details = repo else {
             return nil
@@ -105,6 +114,7 @@ class RepoListPresenter {
         let imageUrlValue = details.owner.avatarURL
         return  RepoDetailsUIModel(repoUrl: repoUrl, description: description, img: imageUrlValue)
     }
+    
     
     func makeRepoCellPresenter(at index: Int) -> GitReposCellPresenter? {
         guard let repo = fetchedRepos?[index] else {
