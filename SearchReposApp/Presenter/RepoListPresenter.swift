@@ -14,6 +14,7 @@ protocol RepoListCoordinatorProtocol {
 protocol RepoListViewProtocol: NSObject {
     func showErrorView()
     func showNoDataView()
+    func hideNoDataView()
     func OnReposListChanged()
     func showLoadingIndicator()
     func hideLoadingIndicator()
@@ -65,6 +66,7 @@ class RepoListPresenter {
             guard let self = self else {return}
             
             self.viewDelegate?.hideLoadingIndicator()
+            self.viewDelegate?.hideNoDataView()
             switch result {
             case .success(let repos):
                 if self.pageIndex == 1 {

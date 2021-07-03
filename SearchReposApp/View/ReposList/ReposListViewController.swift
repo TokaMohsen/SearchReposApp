@@ -97,6 +97,10 @@ extension ReposListViewController: RepoListViewProtocol{
         self.tableView.isHidden = true
     }
     
+    func hideNoDataView() {
+        self.noDataView.isHidden = true
+        self.tableView.isHidden = false
+    }
     
     func showErrorView() {
         let alertController = UIAlertController(title: "Error", message: "Invalid Operation", preferredStyle: .alert)
@@ -133,6 +137,10 @@ extension ReposListViewController: UISearchBarDelegate{
         presenter.resetPageIndex()
         if let keyword = searchBar.text, keyword.count >= 2 {
             presenter.searchKeyword = keyword
+        }
+        else if searchBar.text?.count ?? 0 == 0 {
+            presenter.searchKeyword = nil
+
         }
     }
 }
