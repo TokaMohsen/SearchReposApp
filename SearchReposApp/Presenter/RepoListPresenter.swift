@@ -37,7 +37,7 @@ class RepoListPresenter {
     }
     
     private var pageIndex = 0
-    private let numberOfItemsPerPage = 20
+    private let numberOfItemsPerPage = 10
     
     var searchKeyword: String? {
         didSet {
