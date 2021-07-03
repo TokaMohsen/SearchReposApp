@@ -106,11 +106,13 @@ class RepoListPresenter {
         return  RepoDetailsUIModel(repoUrl: repoUrl, description: description, img: imageUrlValue)
     }
     
-    func makeRepoCellUIModel(at index: Int) -> RepoCellUIModel? {
+    func makeRepoCellPresenter(at index: Int) -> GitReposCellPresenter? {
         guard let repo = fetchedRepos?[index] else {
             return nil
         }
-        return RepoCellUIModel(repoName: repo.fullName, ownerName: repo.owner.login, creationDate: "12-37-8338", img: repo.owner.avatarURL)
+        
+        let service = GetOwnerInfoService()
+        return GitReposCellPresenter(service: service, repoDetails: repo)
     }
 }
 
