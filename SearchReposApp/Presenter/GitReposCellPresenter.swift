@@ -27,9 +27,7 @@ class GitReposCellPresenter{
     
     func fetchCreationDate()
     {
-        infoService.getRepoCreationDate(from: repo.url) { [weak self] (result) in
-            guard let self = self else {return}
-    
+        infoService.getRepoCreationDate(from: repo.url) { (result) in    
             switch result {
             case .success(let response):
                 self.viewDelegate?.updateCreationDate(date: response)
