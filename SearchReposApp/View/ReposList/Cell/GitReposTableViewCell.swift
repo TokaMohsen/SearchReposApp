@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class GitReposTableViewCell : UITableViewCell{
+class GitReposTableViewCell : UITableViewCell {
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var repoImageView: UIImageView!
     @IBOutlet weak var ownerNameLabel: UILabel!
@@ -17,14 +17,22 @@ class GitReposTableViewCell : UITableViewCell{
     static let cellNib = UINib(nibName: "GitReposTableViewCell", bundle: nil)
     static let cellId = "GitReposTableViewCellId"
 
-    func setupTableCell(repo: RepoCellUIModel)
+    func setupTableCell(with presenter: GitReposCellPresenter)
     {
-        self.repoNameLabel.text = repo.repoName
-        self.ownerNameLabel.text = repo.ownerName
-        self.creationDateLabel.text = repo.creationDate
-        if let imgUrl = repo.img {
-            self.repoImageView.downloadImage(from: imgUrl)
+        presenter.setViewDelegate(self)
+        presenter.fetchCreationDate()
+        
+        self.repoNameLabel.text = presenter.repoName
+        self.ownerNameLabel.text = presenter.ownerName
+        self.repoImageView.downloadImage(from: presenter.imageURL)
+    }
+}
+
+extension GitReposTableViewCell: GitReposCellPresenterDelegate {
+    func updateCreationDate(date: String)
+    {
+        DispatchQueue.main.async {
+            self.creationDateLabel.text = date
         }
-        else{repoImageView.image = UIImage(named: "unknown")}
     }
 }
